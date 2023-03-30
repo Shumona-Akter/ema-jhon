@@ -11,10 +11,17 @@ const Cart = (props) => {
 
     let total = 0
     let shippig = 0
+    let quantity = 0
     for (const product of cart){
         // console.log(product)
-        total = total + product.price
-        shippig = shippig + product.shipping
+        if(product.quantity === 0){
+            product.quantity = 1
+        }
+
+        // product.quantity === product.quantity || 1
+        total = total + product.price * product.quantity
+        shippig = shippig + product.shipping * product.quantity
+        quantity = quantity + product.quantity
 
     }
     // step 9 jehutu tax looper moddhe nei
@@ -22,7 +29,7 @@ const Cart = (props) => {
     let GrandTotal = total + tax + shippig
     return (
         <div className='cart'>
-            <h1>Selected Items: {cart.length}</h1>
+            <h1>Selected Items: {quantity}</h1>
             <h1>Total Price: ${total}</h1>
             <h1>Total Shipping Charge: ${shippig}</h1>
             <h1>Tax:  {tax}</h1>

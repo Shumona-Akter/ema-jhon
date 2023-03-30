@@ -24,7 +24,7 @@ const Products = () => {
     useEffect(()=>{
         // function call korte hbe store er jinis gulo bowser a ante
         const storedCard = getShoppingCart()
-        
+        /*
         // step 1:get the id . loop chalate hobe for in loop
         for(const id in storedCard){
             console.log(id)
@@ -42,7 +42,19 @@ const Products = () => {
             console.log(savedProduct)
             
         }
+        */
 
+        let saveCart = []
+        for(const id in storedCard){
+            const savedProduct = products.find(product => product.id === id)
+            if(savedProduct){
+                const quantity = storedCard[id]
+                savedProduct.quantity = quantity
+                saveCart.push(savedProduct)
+            }
+            
+        }
+        setCart(saveCart)
 
     },[products])
     return (
