@@ -1,8 +1,9 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { addToDb, getShoppingCart } from '../../utilities/fakedb';
+import { addToDb, deleteShoppingCart, getShoppingCart } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Product from '../product/Product';
 import './Products.css'
+import { Link } from 'react-router-dom';
 const Products = () => {
     const [products , setProducts] = useState([])
     useEffect(()=>{
@@ -56,7 +57,13 @@ const Products = () => {
         }
         setCart(saveCart)
 
+
     },[products])
+
+    const clearCart = ()=>{
+        setCart([])
+        deleteShoppingCart()
+    }
     return (
         <section className='product-part'>
             <div className="products-main">
@@ -68,7 +75,11 @@ const Products = () => {
                 }
             </div>
             <aside className='cart-show'>
-                <Cart cart={cart}></Cart>
+                <Cart cart={cart}
+                clearCart= {clearCart}
+                >
+                    <Link to='oder'>Form Order</Link>
+                </Cart>
             </aside>
         </section>
     );

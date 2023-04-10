@@ -4,21 +4,21 @@ import './Cart.css'
 const Cart = (props) => {
     // step 6
     const cart = props.cart
+    const clearCart = props.clearCart
+    const children = props.children
     // console.log(props.cart);
 
-    // step 7 cart jehu akta array
+    // step 7 cart jehu akta array()
     // step 8 tota parice eer variable declar
 
     let total = 0
     let shippig = 0
     let quantity = 0
     for (const product of cart){
-        // console.log(product)
         if(product.quantity === 0){
             product.quantity = 1
         }
 
-        // product.quantity === product.quantity || 1
         total = total + product.price * product.quantity
         shippig = shippig + product.shipping * product.quantity
         quantity = quantity + product.quantity
@@ -34,6 +34,9 @@ const Cart = (props) => {
             <h1>Total Shipping Charge: ${shippig}</h1>
             <h1>Tax:  {tax}</h1>
             <h1>Grand Total: ${GrandTotal}</h1>
+
+            <button onClick={clearCart}>delete</button>
+            {children}
         </div>
     );
 };

@@ -1,0 +1,27 @@
+.review-details{
+    border: 1px solid red;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.review-img{
+    width: 20%;
+}
+.review-text{
+    width: 70%;
+}
+.review-img img{
+    width: 100%;
+}
+.delete-item{
+    text-align: center;
+    align-items: center;
+    width: 7%;
+    background: #d1baba;
+    padding: 10px;
+    border-radius: 50%;
+    color: red;
+}
