@@ -36,7 +36,7 @@ const Order = () => {
                 <Cart cart={cart}
                 clearCart = {clearCart}
                 >
-                    <Link to="">Order Procedure</Link>
+                    <Link to="/inventory">Order Procedure</Link>
                 </Cart>
             </aside>
         </div>

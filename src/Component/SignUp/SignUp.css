@@ -1,0 +1,13 @@
+.resister-area{
+    width: 500px;
+    margin: 0 auto;
+    height: 400px;
+    background-color: antiquewhite;
+    padding: 40px;
+}
+.resister-area input{
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    margin:  10px 0;
+}

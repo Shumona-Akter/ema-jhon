@@ -3,7 +3,7 @@ import './Review.css'
 import { TrashIcon } from '@heroicons/react/24/solid'
 
 const Review = ({product, removeHandler}) => {
-    // console.log(product)
+    console.log(product)
     return (
         <div className='review-details'>
             <div className='review-img'>
